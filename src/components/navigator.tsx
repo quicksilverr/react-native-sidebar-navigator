@@ -8,7 +8,7 @@ import {
   TabNavigationState,
   TabActionHelpers,
 } from '@react-navigation/native';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import type {
   SidebarNavigationEventMap,
   SidebarNavigationOptions,
@@ -22,12 +22,6 @@ export const SideBarNavigator: React.FC<SideBarNavigatorProps> = ({
   backBehavior,
   initialRouteName,
   ...rest
-  // sideBarStyle,
-  // sideBarActiveBackgroundColor,
-  // sideBarActiveTintColor,
-  // sideBarInactiveBackgroundColor,
-  // sideBarInactiveTintColor,
-  // sideBarItemStyle,
 }) => {
   const { state, navigation, NavigationContent, descriptors } =
     useNavigationBuilder<
@@ -43,7 +37,7 @@ export const SideBarNavigator: React.FC<SideBarNavigatorProps> = ({
     });
   return (
     <NavigationContent>
-      <View style={{ flexDirection: 'row', flex: 1 }}>
+      <View style={styles.container}>
         <Sidebar
           descriptors={descriptors}
           navigation={navigation}
@@ -62,3 +56,7 @@ export const createSideBarNavigator = createNavigatorFactory<
   SidebarNavigationEventMap,
   typeof SideBarNavigator
 >(SideBarNavigator);
+
+const styles = StyleSheet.create({
+  container: { flexDirection: 'row', flex: 1 },
+});

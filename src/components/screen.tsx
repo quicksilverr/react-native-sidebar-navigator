@@ -1,14 +1,10 @@
 import type {
-  NavigationHelpers,
   ParamListBase,
   TabNavigationState,
 } from '@react-navigation/native';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import type {
-  SidebarDescriptorMap,
-  SidebarNavigationEventMap,
-} from 'src/types';
+import type { SidebarDescriptorMap } from 'src/types';
 
 interface ScreenProps {
   state: TabNavigationState<ParamListBase>;

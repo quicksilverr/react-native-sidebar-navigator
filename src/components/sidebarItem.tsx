@@ -1,7 +1,7 @@
-import type { ParamListBase, Route } from '@react-navigation/native';
 import React from 'react';
 import { Pressable, Text, View } from 'react-native';
 import type { SidebarDescriptorMap, SidebarNavigationConfig } from 'src/types';
+import type { Route } from '@react-navigation/native';
 import { Badge } from './badge';
 
 interface SidebarItemProps extends SidebarNavigationConfig {
